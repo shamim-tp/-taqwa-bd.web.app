@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IMS ERP V5 - Cloud Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="loadingOverlay" class="loading-overlay">
+  <div class="loader"></div>
+  <p>Connecting to Cloud...</p>
+</div>
+
+<div class="toastWrap" id="toastWrap"></div>
+
+<div id="loginPage" class="loginWrap">
+  <div class="loginCard">
+    <div class="loginGrid">
+      <div class="loginLeft">
+        <h1>IMS ERP <span class="badge">CLOUD</span></h1>
+        <p>Realtime Investment Management System</p>
+        <div class="kpiBox">
+          <div class="kpi">✔ Live Data Sync</div>
+          <div class="kpi">✔ Secure Cloud DB</div>
+          <div class="kpi">✔ Admin Control</div>
+        </div>
+      </div>
+
+      <div class="loginRight">
+        <div class="loginTabs">
+          <button id="tabAdmin" class="tabBtn active">Admin Panel</button>
+          <button id="tabMember" class="tabBtn">Member Panel</button>
+        </div>
+
+        <div class="inputGroup">
+          <label>User ID</label>
+          <input type="text" id="loginId" placeholder="e.g. ADM-001">
+        </div>
+        <div class="inputGroup">
+          <label>Password</label>
+          <input type="password" id="loginPass" placeholder="••••••••">
+        </div>
+
+        <button id="loginBtn" class="btn btn-primary btn-block">Login to System</button>
+        
+        <div class="hint">
+          <small>Default Admin: ADM-001 / admin123</small><br>
+          <small>Default Member: FM-001 / 1234</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="appPage" class="appWrap" style="display:none;">
+  <aside class="sidebar">
+    <div class="sideHead">
+      <div class="logo">IMS ERP V5</div>
+    </div>
+    <nav id="sidebarNav"></nav>
+    <div class="sideFoot">
+      <button id="logoutBtn" class="btn btn-danger btn-block">Logout</button>
+    </div>
+  </aside>
+
+  <main class="mainContent">
+    <header class="topBar">
+      <h2 id="pageTitle">Dashboard</h2>
+      <div class="userPanel">
+        <span id="userRoleBadge" class="badge">ROLE</span>
+        <span id="userNameDisplay">User</span>
+      </div>
+    </header>
+    <div id="pageContent" class="contentArea"></div>
+  </main>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
